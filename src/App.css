@@ -1,38 +1,189 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 15px;
+  max-width: 100vw;
+}
+
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+  max-width: 100vw;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+.Cards {
+  /* grid of three columns with equal width */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  max-width: 1440px;
+  /* center the cards */
+  margin: 0 auto;
+  /* Cards have to shrink */
+  flex-shrink: 0;
+  /* Cards have to grow */
+  flex-grow: 1;
+  /* Cards have to be aligned to the center */
+  align-items: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.Card {
+  padding: 3em;
+  color: hsla(0, 0%, 100%, 0.75);
+  min-height: calc(100vh - 400px);
+  max-width: calc(1440px/3);
+}
+
+.CardTitle {
+  font-size: 2.5em;
+  font-weight: bold;
+  margin-bottom: 0.8em;
+  margin-top: 0.8em;
+}
+
+.CardContent {
+  min-height: 220px;
+  max-width: 75%;
+  line-height: 2em;
+  font-size: 1.2em;
+}
+
+.CardFooter {
+  font-weight: bold;
+  margin-top: 4em;
+}
+
+.CardFooter button {
+  padding: 1em 2.5em;
+  border-radius: 50px;
+  border: none;
+  font-size: 1.2em;
+}
+
+/* target first .card */
+.Card:nth-child(1) {
+  background-color: hsl(31, 77%, 52%);
+  grid-area: "card-1";
+  border-radius: 10px 0 0 10px;
+}
+
+.Card:nth-child(1) .CardFooter button {
+  border: 2px solid;
+  border-color: white !important;
+  color:hsl(31, 77%, 52%);
+}
+
+.Card:nth-child(1) .CardFooter button:hover {
+  cursor: pointer;
+  color:hsla(0, 0%, 100%, 0.75) !important;
+  background-color: hsl(31, 77%, 52%);
+}
+
+/* target second .card */
+.Card:nth-child(2) {
+  background-color: hsl(184, 100%, 22%);
+  grid-area: "card-2";
+}
+
+.Card:nth-child(2) .CardFooter button {
+  border: 2px solid;
+  border-color: white !important;
+  color: hsl(184, 100%, 22%);
+}
+
+.Card:nth-child(2) .CardFooter button:hover {
+  cursor: pointer;
+  color:hsla(0, 0%, 100%, 0.75) !important;
+  background-color: hsl(184, 100%, 22%);
+}
+
+/* target third .card */
+.Card:nth-child(3) {
+  background-color: hsl(179, 100%, 13%);
+  grid-area: "card-3";
+  border-radius: 0 10px 10px 0;
+}
+
+.Card:nth-child(3) .CardFooter button {
+  border: 2px solid;
+  border-color: white !important;
+  color: hsl(179, 100%, 13%);
+}
+
+.Card:nth-child(3) .CardFooter button:hover {
+  cursor: pointer;
+  color:hsla(0, 0%, 100%, 0.75) !important;
+  background-color: hsl(179, 100%, 13%);
+}
+
+.Font-1 {
+  font-family: 'Lexend Deca', sans-serif;
+}
+
+.Font-2 {
+  font-family: 'Big Shoulders Display', cursive;
+}
+
+/* media querie max width 1500px */
+@media (max-width: 1440px) {
+  .Cards {
+    /* grid with two rows and the second row has his card centered */
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    /* gutter */
+    grid-column-gap: 1em;
+    grid-template-areas:
+      'card-1 card-2'
+      'card-3 card-3';
+    /* center the cards */
+    margin: 0 auto;
   }
-  to {
-    transform: rotate(360deg);
+  .App {
+    margin: 2em 0;
+  }
+  .Card {
+    border-radius: 10px !important;
+  }
+  .Card:nth-child(3) {
+    grid-area: card-3;
+    justify-self: center;
+    margin-top: 2em;
+  }
+}
+
+/* media querie max width 1000px */
+@media (max-width: 1000px) {
+  .Cards {
+    /* grid three rows 1 column */
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      'card-1'
+      'card-2'
+      'card-3';
+    margin-left: 0;
+  }
+  .App {
+    margin: 2em 2em;
+  }
+  /* center the cards */ 
+  .Card {
+    justify-self: center;
+    max-width: calc(100vw - 4em);
+    margin-top: 0px !important;
+  }
+  .Card:nth-child(1) {
+    border-radius: 10px 10px 0px 0px !important;
+  }
+  .Card:nth-child(2) {
+    border-radius: 0px !important;
+  }
+  .Card:nth-child(3) {
+    border-radius: 0px 0px 10px 10px !important;
   }
 }
