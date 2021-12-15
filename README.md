@@ -11,6 +11,8 @@ Users should be able to:
 
 ### Screenshot
 
+![image](https://user-images.githubusercontent.com/17856308/146129179-fb2f3947-7572-4df1-b28c-bbf4e3e4b501.png)
+
 ### Links
 
 - Solution URL: https://github.com/Intempestif/FrontEndMentor_3-column-preview-card-component
