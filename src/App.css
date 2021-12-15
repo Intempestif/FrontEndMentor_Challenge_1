@@ -133,7 +133,7 @@ body {
 /* media querie max width 1500px */
 @media (max-width: 1440px) {
   .Cards {
-    margin: 0 3em;
+    margin: 0 4em;
   }
 }
 
