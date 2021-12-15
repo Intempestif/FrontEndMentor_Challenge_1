@@ -69,7 +69,6 @@ body {
 /* target first .card */
 .Card:nth-child(1) {
   background-color: hsl(31, 77%, 52%);
-  grid-area: "card-1";
   border-radius: 10px 0 0 10px;
 }
 
@@ -88,7 +87,6 @@ body {
 /* target second .card */
 .Card:nth-child(2) {
   background-color: hsl(184, 100%, 22%);
-  grid-area: "card-2";
 }
 
 .Card:nth-child(2) .CardFooter button {
@@ -106,7 +104,6 @@ body {
 /* target third .card */
 .Card:nth-child(3) {
   background-color: hsl(179, 100%, 13%);
-  grid-area: "card-3";
   border-radius: 0 10px 10px 0;
 }
 
