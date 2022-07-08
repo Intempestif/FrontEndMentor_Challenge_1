@@ -27,12 +27,6 @@ Users should be able to:
 - CSS Grid
 - REACT (https://reactjs.org/) - JS library
 
-### What I learned
-
-I'm learning React with this challenge
-
 ## Author
 
-- Website - https://tanguydespat.com
 - Frontend Mentor - https://www.frontendmentor.io/profile/Intempestif
-- Malt - https://www.malt.fr/profile/tanguydespat?overview=true
